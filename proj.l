@@ -1,5 +1,7 @@
 %{
 #include "y.tab.h"
+#include <string.h>
+// extern char varstr[50];
 extern yylval;
 %}
 %%
@@ -17,8 +19,9 @@ extern yylval;
 "{"		{return OC;}
 "}"		{return CC;}
 [a-z] {yylval=yytext[0]-'a'; return NAME;}
-[a-z]+ {return STRING;}
+[A-Za-z]+ {return STRING;}
 '$' {return 0;}
 \n {return ENTER;}
 . {return yytext[0];}
+
 

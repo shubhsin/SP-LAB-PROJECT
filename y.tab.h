@@ -50,7 +50,11 @@
      FORKEY = 266,
      INDEXKEY = 267,
      INDEXDOT = 268,
-     INKEY = 269
+     INKEY = 269,
+     OB = 270,
+     CB = 271,
+     OC = 272,
+     CC = 273
    };
 #endif
 /* Tokens.  */
@@ -66,6 +70,10 @@
 #define INDEXKEY 267
 #define INDEXDOT 268
 #define INKEY 269
+#define OB 270
+#define CB 271
+#define OC 272
+#define CC 273
 
 
 
