@@ -1,3 +1,6 @@
+//  Created by Shubham Sorte
+//  Copyright (c) 2015 Shubham Sorte. All rights reserved.
+
 %{
 #include <stdio.h>
 #include <string.h>
@@ -20,6 +23,9 @@ int k=0;
 %token INDEXKEY
 %token INDEXDOT
 %token INKEY
+%token REPEAT
+%token WHILE
+%token RELOP
 %token OB CB OC CC
 
 %left '+' '-'
@@ -37,8 +43,10 @@ stmt: VARKEY WHITESPACE NAME '=' expr {vbltable[$3]=$5;}
 | FORKEY WHITESPACE INDEXKEY WHITESPACE INKEY WHITESPACE NUMBER INDEXDOT NUMBER ENTER PRINTKEY WHITESPACE STRING {
 printf("VALID FOR LOOP\n");
 }
+| REPEAT OC ENTER CC WHILE OB OPT RELOP OPT CB ENTER {printf("Valid REPEAT WHILE LOOP\n");}
 ;
 
+OPT: NUMBER|NAME
 expr: expr '+' expr {$$=$1+$3;}
 | expr '-' expr {$$=$1-$3;}
 | expr '*' expr {$$=$1*$3;}

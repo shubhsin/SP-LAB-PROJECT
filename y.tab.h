@@ -51,10 +51,13 @@
      INDEXKEY = 267,
      INDEXDOT = 268,
      INKEY = 269,
-     OB = 270,
-     CB = 271,
-     OC = 272,
-     CC = 273
+     REPEAT = 270,
+     WHILE = 271,
+     RELOP = 272,
+     OB = 273,
+     CB = 274,
+     OC = 275,
+     CC = 276
    };
 #endif
 /* Tokens.  */
@@ -70,10 +73,13 @@
 #define INDEXKEY 267
 #define INDEXDOT 268
 #define INKEY 269
-#define OB 270
-#define CB 271
-#define OC 272
-#define CC 273
+#define REPEAT 270
+#define WHILE 271
+#define RELOP 272
+#define OB 273
+#define CB 274
+#define OC 275
+#define CC 276
 
 
 

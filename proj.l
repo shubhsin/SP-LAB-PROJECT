@@ -11,6 +11,8 @@ extern yylval;
 "print" {return PRINTKEY;}
 [" "]	{return WHITESPACE;}
 "for" {return FORKEY;}
+"repeat" {return REPEAT;}
+"while"	 {return WHILE;}
 "index" {return INDEXKEY;}
 "..."	{return INDEXDOT;}
 "in"	{return INKEY;}
@@ -18,6 +20,7 @@ extern yylval;
 ")"		{return CB;}
 "{"		{return OC;}
 "}"		{return CC;}
+(>)|(<)|(==)|(!=)	{return RELOP;}
 [a-z] {yylval=yytext[0]-'a'; return NAME;}
 [A-Za-z]+ {return STRING;}
 '$' {return 0;}
